@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "9697e043-e02e-4574-8dc4-5178211a7152",
+		"name": "Library mgmt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstname",
+							"value": "john",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "cena",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "9403475849",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "rose@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "m",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "mumbai",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTAyOCwiZXhwIjoxNjE2MzA4NjI4LCJuYmYiOjE2MTYzMDUwMjgsImp0aSI6ImdrcWpacG9BWU1XTkx5WW0ifQ.wydR9oTRrIrYCNflSHfNHpUhS6ibrX6O01Xyz1idOIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "rose@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjI1NTA3MSwiZXhwIjoxNjE2MjU4NjcxLCJuYmYiOjE2MTYyNTUwNzEsImp0aSI6IkhuQ3UxSWEwdTdpc1czT2wifQ.Bnh2M_FdMm13e2xvDV53KtmFViJh-n66XR2yrLTpoEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjI1NDExOCwiZXhwIjoxNjE2MjU3NzE4LCJuYmYiOjE2MTYyNTQxMTgsImp0aSI6Ijk5c3AyN0Q5NjhKQ2VHQzEifQ.7pNrzT646G8yjMXrEd2s_qJQm7wcIFJYQU6qKy3cG8w",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "book_name",
+							"value": "Php tutorials",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "mandy rose",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"type": "file",
+							"src": "/home/lenovo/Downloads/cover_images/c1.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/add/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/book/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjI1ODg3NSwiZXhwIjoxNjE2MjYyNDc1LCJuYmYiOjE2MTYyNTg4NzUsImp0aSI6IklWbVppTllrWUlOV0hLcncifQ.nPJ92U5ZWyfaJObgoibvb7x7aOK8LFRkAjTsi-Xiucc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/book/details/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"details",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rent a book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "book_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/book/rent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"rent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return a book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/book/return/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"return",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user rented books list.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTYxNjMwNTkzNiwiZXhwIjoxNjE2MzA5NTM2LCJuYmYiOjE2MTYzMDU5MzYsImp0aSI6Ikx3V2FEUXNLMjVnYzBHZXIifQ.c9B5iL-SCR01KJkL553ObjMujLxHt8-ntaTKTfps374",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/user/rented-books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"rented-books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
